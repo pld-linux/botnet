@@ -77,7 +77,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install example/Makefile $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
 install example/*.c $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf ChangeLog AUTHORS *.txt
+gzip -9nf ChangeLog AUTHORS todo.txt botnet.txt
 
 %post -p /sbin/ldconfig
 
