@@ -1,7 +1,7 @@
 Summary:	a small library to assist development of IRC bots and/or clients
 Summary(pl):	ma³a biblioteka pomocna przy tworzeniu botów i/lub klientów IRC
 Name:		botnet
-Version:	1.5.1
+Version:	1.5.2
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -9,7 +9,7 @@ Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
 Patch0:		%{name}-examples.patch
-URL:		http://zekiller.skytech.org/main.html
+URL:		http://zekiller.skytech.org/coders_en.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
