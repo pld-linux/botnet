@@ -12,11 +12,12 @@ diff -Naur botnet-1.5.1/Makefile.am botnet-1.5.1-p/Makefile.am
 diff -Naur botnet-1.5.1/example/Makefile.new botnet-1.5.1-p/example/Makefile
 --- botnet-1.5.1/example/Makefile.new	Thu Jan  1 01:00:00 1970
 +++ botnet-1.5.1-p/example/Makefile.new	Wed Aug 23 18:35:47 2000
-@@ -0,0 +1,13 @@
+@@ -0,0 +1,14 @@
 +%.o: %.c
 +	$(CC) $(CFLAGS) -c -o $@ $<
 +
-+all: bot serv
++#all: bot serv
++all: bot
 +
 +bot: bot.o
 +	$(CC) $(LDFLAGS) -lbotnet -o $@ $<
