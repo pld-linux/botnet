@@ -1,12 +1,12 @@
 Summary:	A small library to assist development of IRC bots and/or clients
 Summary(pl):	Ma³a biblioteka pomocna przy tworzeniu botów i/lub klientów IRC
 Name:		botnet
-Version:	1.6.3
+Version:	1.6.4
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
-# Source0-md5:	bb18b624193b2012bef929dca7e388f3
+# Source0-md5:	408e2998d4d51a1e7b40600890e364d8
 Patch0:		%{name}-examples.patch
 URL:		http://zekiller.skytech.org/coders_en.html
 BuildRequires:	autoconf
