@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog AUTHORS todo.txt botnet.txt
 %attr(755,root,root) %{_bindir}/botnet-config
 %attr(755,root,root) %{_libdir}/*.so
-%attr(755,root,root) %{_libdir}/*.la
+%{_libdir}/*.la
 %{_includedir}/*
 %{_examplesdir}/%{name}-%{version}
 
