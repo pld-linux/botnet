@@ -38,7 +38,7 @@ Requires:	%{name} = %{version}
 %description devel
 Header files neccesary to develop botnet applications.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe niezbêdne do tworzenia aplikacji korzystaj±cych z
 botneta.
 
@@ -51,7 +51,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Libraries neccessary to link botnet applications statically.
 
-%description -l pl static
+%description static -l pl
 Biblioteka potrzebna do statycznego linkowania aplikacji
 korzystaj±cych z botneta.
 
@@ -65,7 +65,7 @@ libtoolize --copy --force
 aclocal
 autoconf
 automake -a -c
-%configure 
+%configure
 
 %{__make}
 
