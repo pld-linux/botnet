@@ -3,9 +3,10 @@ Summary(pl):	ma³a biblioteka pomocna przy tworzeniu botów i/lub klientów IRC
 Name:		botnet
 Version:	1.5.1
 Release:	1
-Group:		Libraries
-Group(pl):	Biblioteki
 License:	GPL
+Group:		Libraries
+Group(fr):	Librairies
+Group(pl):	Biblioteki
 Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
 URL:		http://zekiller.skytech.org/main.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,6 +31,7 @@ serwerów-li¶ci kompatybilnych z nowymi RFC (2810 do 2813).
 Summary:	header files for botnet
 Summary(pl):	pliki nag³ówkowe dla botneta
 Group:		Development/Libraries
+Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
@@ -44,6 +46,7 @@ botneta.
 Summary:	botnet static library
 Summary(pl):	statyczna wersja biblioteki botnet
 Group:		Development/Libraries
+Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
@@ -74,12 +77,13 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-install example/*.c $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
+install example/*.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/*.so.*.*
 
 gzip -9nf ChangeLog AUTHORS todo.txt botnet.txt
 
-%post -p /sbin/ldconfig
-
+%post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %clean
@@ -95,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/*.so
 %attr(755,root,root) %{_libdir}/*.la
 %{_includedir}/*
-%{_examplesdir}/%{name}-%{version}/*
+%{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
