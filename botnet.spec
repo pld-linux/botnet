@@ -1,7 +1,7 @@
 Summary:	a small library to assist development of IRC bots and/or clients
 Summary(pl):	ma³a biblioteka pomocna przy tworzeniu botów i/lub klientów IRC
 Name:		botnet
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -67,10 +67,6 @@ korzystaj±cych z botneta.
 
 
 %build
-aclocal
-autoheader
-autoconf
-automake 
 
 %configure 
 
