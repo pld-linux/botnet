@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
+# Source0-md5:	bb18b624193b2012bef929dca7e388f3
 Patch0:		%{name}-examples.patch
 URL:		http://zekiller.skytech.org/coders_en.html
 BuildRequires:	automake
