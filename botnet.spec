@@ -74,7 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-install example/Makefile $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
 install example/*.c $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
 
 gzip -9nf ChangeLog AUTHORS todo.txt botnet.txt
