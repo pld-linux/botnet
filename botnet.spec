@@ -9,8 +9,8 @@ Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
 # Source0-md5:	bb18b624193b2012bef929dca7e388f3
 Patch0:		%{name}-examples.patch
 URL:		http://zekiller.skytech.org/coders_en.html
-BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -74,9 +74,11 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
-install example/*.c $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
-install example/Makefile.new $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}/Makefile
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+install example/*.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install example/Makefile.new $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/Makefile
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
