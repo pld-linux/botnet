@@ -80,8 +80,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install example/*.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install example/Makefile.new $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/Makefile
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
