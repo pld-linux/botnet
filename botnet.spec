@@ -1,18 +1,23 @@
 Summary:	a small library to assist development of IRC bots and/or clients
 Summary(pl):	maЁa biblioteka pomocna przy tworzeniu botСw i/lub klientСw IRC
 Name:		botnet
-Version:	1.6.1
-Release:	2
+Version:	1.6.2
+Release:	1
 License:	GPL
 Group:		Libraries
 Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
+Group(pt_BR):	Bibliotecas
+Group(ru):	Библиотеки
+Group(uk):	Б╕бл╕отеки
 Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
 Patch0:		%{name}-examples.patch
 URL:		http://zekiller.skytech.org/coders_en.html
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,8 +41,12 @@ Summary:	header files for botnet
 Summary(pl):	pliki nagЁСwkowe dla botneta
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -52,8 +61,12 @@ Summary:	botnet static library
 Summary(pl):	statyczna wersja biblioteki botnet
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -67,12 +80,12 @@ korzystaj╠cych z botneta.
 %setup -q
 %patch0 -p1
 
-
 %build
 rm -f missing
-automake -a -c
+libtoolize --copy --force
 aclocal
 autoconf
+automake -a -c
 %configure 
 
 %{__make}
