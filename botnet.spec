@@ -1,7 +1,7 @@
 Summary:	a small library to assist development of IRC bots and/or clients
 Summary(pl):	ma³a biblioteka pomocna przy tworzeniu botów i/lub klientów IRC
 Name:		botnet
-Version:	1.6.2
+Version:	1.6.3
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -77,8 +77,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install example/*.c $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
 install example/Makefile.new $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}/Makefile
 
-gzip -9nf ChangeLog AUTHORS todo.txt botnet.txt
-
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -91,7 +89,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ChangeLog AUTHORS todo.txt botnet.txt
+%attr(755,root,root) %{_bindir}/botnet-config
 %attr(755,root,root) %{_libdir}/*.so
 %attr(755,root,root) %{_libdir}/*.la
 %{_includedir}/*
