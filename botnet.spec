@@ -1,10 +1,11 @@
 Summary:	a small library to assist development of IRC bots and/or clients
 Summary(pl):	ma³a biblioteka pomocna przy tworzeniu botów i/lub klientów IRC
 Name:		botnet
-Version:	1.5.2
+Version:	1.5.3
 Release:	1
 License:	GPL
 Group:		Libraries
+Group(de):	Libraries
 Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
@@ -32,6 +33,7 @@ serwerów-li¶ci kompatybilnych z nowymi RFC (2810 do 2813).
 Summary:	header files for botnet
 Summary(pl):	pliki nag³ówkowe dla botneta
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
@@ -47,6 +49,7 @@ botneta.
 Summary:	botnet static library
 Summary(pl):	statyczna wersja biblioteki botnet
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
@@ -69,7 +72,6 @@ autoheader
 autoconf
 automake 
 
-LDFLAGS="-s"; export LDFLAGS
 %configure 
 
 %{__make}
