@@ -11,6 +11,8 @@ Group(pl):	Biblioteki
 Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
 Patch0:		%{name}-examples.patch
 URL:		http://zekiller.skytech.org/coders_en.html
+BuildRequires:	automake
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -67,7 +69,10 @@ korzystaj±cych z botneta.
 
 
 %build
-
+rm -f missing
+automake -a -c
+aclocal
+autoconf
 %configure 
 
 %{__make}
