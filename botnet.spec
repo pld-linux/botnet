@@ -78,14 +78,11 @@ automake
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 install example/*.c $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
 install example/Makefile.new $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}/Makefile
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/*.so.*.*
 
 gzip -9nf ChangeLog AUTHORS todo.txt botnet.txt
 
@@ -97,11 +94,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
 %attr(755,root,root) %{_libdir}/*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
+%doc *.gz
 %attr(755,root,root) %{_libdir}/*.so
 %attr(755,root,root) %{_libdir}/*.la
 %{_includedir}/*
