@@ -53,7 +53,7 @@ Requires:	%{name}-devel = %{version}
 Libraries neccessary to link botnet applications statically.
 
 %description static -l pl
-Biblioteka potrzebna do statycznego linkowania aplikacji
+Biblioteka potrzebna do statycznej konsolidacji aplikacji
 korzystaj±cych z botneta.
 
 %prep
