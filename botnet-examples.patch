@@ -1,17 +1,33 @@
-diff -Naur botnet-1.5.1/Makefile.am botnet-1.5.1-p/Makefile.am
---- botnet-1.5.1/Makefile.am	Wed Mar 29 18:38:46 2000
-+++ botnet-1.5.1-p/Makefile.am	Wed Aug 23 18:23:52 2000
+diff -Nru botnet-1.5.3/Makefile.am botnet-1.5.3.new/Makefile.am
+--- botnet-1.5.3/Makefile.am	Thu Sep 14 04:03:53 2000
++++ botnet-1.5.3.new/Makefile.am	Thu Sep 14 04:03:08 2000
 @@ -1,6 +1,6 @@
  ## Process this file with automake to produce Makefile.in
  
 -SUBDIRS = makelib example
 +SUBDIRS = makelib
  
- EXTRA_DIST = \
-         License.txt \
-diff -Naur botnet-1.5.1/example/Makefile.new botnet-1.5.1-p/example/Makefile
---- botnet-1.5.1/example/Makefile.new	Thu Jan  1 01:00:00 1970
-+++ botnet-1.5.1-p/example/Makefile.new	Wed Aug 23 18:35:47 2000
+ bin_SCRIPTS = botnet-config
+ 
+diff -Nru botnet-1.5.3/Makefile.am~ botnet-1.5.3.new/Makefile.am~
+--- botnet-1.5.3/Makefile.am~	Thu Jan  1 01:00:00 1970
++++ botnet-1.5.3.new/Makefile.am~	Tue Sep 12 14:17:57 2000
+@@ -0,0 +1,12 @@
++## Process this file with automake to produce Makefile.in
++
++SUBDIRS = makelib example
++
++bin_SCRIPTS = botnet-config
++
++EXTRA_DIST = \
++        License.txt \
++	botnet.txt \
++	file_id.diz \
++	todo.txt
++
+diff -Nru botnet-1.5.3/example/Makefile.new botnet-1.5.3.new/example/Makefile.new
+--- botnet-1.5.3/example/Makefile.new	Thu Jan  1 01:00:00 1970
++++ botnet-1.5.3.new/example/Makefile.new	Thu Sep 14 04:03:08 2000
 @@ -0,0 +1,14 @@
 +%.o: %.c
 +	$(CC) $(CFLAGS) -c -o $@ $<
@@ -27,9 +43,9 @@ diff -Naur botnet-1.5.1/example/Makefile.new botnet-1.5.1-p/example/Makefile
 +
 +clean:
 +	rm -f *.o bot serv core
-diff -Naur botnet-1.5.1/example/bot.c botnet-1.5.1-p/example/bot.c
---- botnet-1.5.1/example/bot.c	Wed Aug  2 21:42:02 2000
-+++ botnet-1.5.1-p/example/bot.c	Wed Aug 23 18:28:31 2000
+diff -Nru botnet-1.5.3/example/bot.c botnet-1.5.3.new/example/bot.c
+--- botnet-1.5.3/example/bot.c	Thu Sep 14 04:03:53 2000
++++ botnet-1.5.3.new/example/bot.c	Thu Sep 14 04:03:08 2000
 @@ -4,7 +4,7 @@
  */
  
@@ -39,15 +55,15 @@ diff -Naur botnet-1.5.1/example/bot.c botnet-1.5.1-p/example/bot.c
  #include <stdio.h>
  #include <stdlib.h>
  #ifdef __unix__
-diff -Naur botnet-1.5.1/example/serv.c botnet-1.5.1-p/example/serv.c
---- botnet-1.5.1/example/serv.c	Wed Aug  2 21:48:45 2000
-+++ botnet-1.5.1-p/example/serv.c	Wed Aug 23 18:35:22 2000
-@@ -6,7 +6,7 @@
- /* DO NOT forget to define SERVER before any include of botnet if you want to use BotNet's server capabilities */
- /* But we don't need it here, because makefile already defines it */
- //#define SERVER
+diff -Nru botnet-1.5.3/example/serv.c botnet-1.5.3.new/example/serv.c
+--- botnet-1.5.3/example/serv.c	Thu Sep 14 04:03:53 2000
++++ botnet-1.5.3.new/example/serv.c	Thu Sep 14 04:04:40 2000
+@@ -3,7 +3,7 @@
+   aka Ze KiLleR / SkyTech
+ */
+ 
 -#include "../makelib/botnet.h"
-+#include <botnet.h>
++#include "botnet.h"
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
