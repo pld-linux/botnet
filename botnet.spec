@@ -8,6 +8,7 @@ Group:		Libraries
 Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	http://zekiller.skytech.org/fichiers/botnet/%{name}-%{version}.tar.gz
+Patch0:		%{name}-examples.patch
 URL:		http://zekiller.skytech.org/main.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,6 +60,8 @@ korzystaj±cych z botneta.
 
 %prep
 %setup -q
+%patch0 -p1
+
 
 %build
 aclocal
@@ -66,7 +69,7 @@ autoheader
 autoconf
 automake 
 
-LDFLAGS="-s" ; export LDFLAGS
+LDFLAGS="-s"; export LDFLAGS
 %configure 
 
 %{__make}
@@ -77,7 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-install example/*.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install example/*.c $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}
+install example/Makefile.new $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}/Makefile
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/*.so.*.*
 
