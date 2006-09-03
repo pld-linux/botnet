@@ -1,0 +1,3 @@
+- (auto)updated to 1.6.3: bugfixes,
+- use new %doc,
+- add %{_bindir}/botnet-config to devel %files list.
