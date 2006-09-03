@@ -34,7 +34,7 @@ serwerów-li¶ci kompatybilnych z nowymi RFC (2810 do 2813).
 Summary:	Header files for botnet
 Summary(pl):	Pliki nag³ówkowe dla botneta
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files neccesary to develop botnet applications.
@@ -47,7 +47,7 @@ botneta.
 Summary:	botnet static library
 Summary(pl):	Statyczna wersja biblioteki botnet
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Libraries neccessary to link botnet applications statically.
