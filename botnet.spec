@@ -1,5 +1,5 @@
 Summary:	A small library to assist development of IRC bots and/or clients
-Summary(pl.UTF-8):   Mała biblioteka pomocna przy tworzeniu botów i/lub klientów IRC
+Summary(pl.UTF-8):	Mała biblioteka pomocna przy tworzeniu botów i/lub klientów IRC
 Name:		botnet
 Version:	1.6.4
 Release:	1
@@ -32,7 +32,7 @@ serwerów-liści kompatybilnych z nowymi RFC (2810 do 2813).
 
 %package devel
 Summary:	Header files for botnet
-Summary(pl.UTF-8):   Pliki nagłówkowe dla botneta
+Summary(pl.UTF-8):	Pliki nagłówkowe dla botneta
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -45,7 +45,7 @@ botneta.
 
 %package static
 Summary:	botnet static library
-Summary(pl.UTF-8):   Statyczna wersja biblioteki botnet
+Summary(pl.UTF-8):	Statyczna wersja biblioteki botnet
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
